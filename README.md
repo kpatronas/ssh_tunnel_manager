@@ -16,28 +16,35 @@ ssh_gateway1 -L 33891:windows1:3389
 ## How to use the tool
 
 ## Start tunnels
+```
 tunnel_manager.sh connections.csv start
-
+```
 If there no any connectivity issues and the commands in the connections.csv file are correct the tunnels will start in parallel and stay in the background.
-
+```
 Tue Feb 1 18:24:11 EET 2022 - INFO - TUNNEL CREATED - gateway2 -L 33887:windows1:3389
 Tue Feb 1 18:24:13 EET 2022 - INFO - TUNNEL CREATED - gateway2 -L 33888:windows2:3389
 Tue Feb 1 18:24:13 EET 2022 - INFO - TUNNEL CREATED - gateway1 -L 33889:windows3:3389
 Tue Feb 1 18:24:13 EET 2022 - INFO - TUNNEL CREATED - -D 33332 -q -C -N -f gateway1
 Tue Feb 1 18:24:13 EET 2022 - INFO - TUNNEL CREATED - -D 33331 -q -C -N -f gateway2
-
+```
 ## Get the status of the tunnels
+```
 tunnel_manager.sh connections.csv status
+```
 
 This will print the status if the SSH tunnels.
-
+```
 Tue Feb 1 18:26:44 EET 2022 - INFO - TUNNEL CREATED - gateway2 -L 33887:windows1:3389
 Tue Feb 1 18:26:44 EET 2022 - INFO - TUNNEL CREATED - gateway2 -L 33888:windows2:3389
 Tue Feb 1 18:26:44 EET 2022 - INFO - TUNNEL CREATED - -D 33332 -q -C -N -f gateway2
-
+```
 ## Stop tunnels
+```
 tunnel_manager.sh connections.csv stop
-
+```
+This will stop the SSH tunnels
+```
 Tue Feb 1 18:28:05 EET 2022 - INFO - TUNNEL STOPPED - gateway2 -L 33888:windows1:3389
 Tue Feb 1 18:28:05 EET 2022 - INFO - TUNNEL STOPPED - gateway2 -L 33889:windows2:3389
 Tue Feb 1 18:28:05 EET 2022 - INFO - TUNNEL STOPPED - -D 33332 -q -C -N -f gateway2
+```
